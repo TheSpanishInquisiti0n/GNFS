@@ -102,6 +102,6 @@ Extract the square roots in both domains and compute the greatest common divisor
 
 ### Important Note
 
-from everybody online, gnfs has a super high setup cost, and while this algoritm is excellent for big ass numbers ($n\ge2^64$), running any other algoritm for a number smaller than that is going to be faster (even the most basic $O(n^2)$ solution)
+from everybody online and from how long this has ended up being, gnfs has a super high setup cost, and while this algoritm is excellent for big ass numbers ($n\ge2^{64}$), running any other algoritm for a number smaller than that is going to be faster (even the most basic $O(n^2)$ solution)
 
 
