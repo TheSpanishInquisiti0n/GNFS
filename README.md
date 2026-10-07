@@ -6,13 +6,13 @@ From google: this algorithm builds on the concept of finding a congruence of squ
 
 ### Steps (still hazy like patrick swayzee)
 
-#### 1: Polynomial Selection
+### 1: Polynomial Selection
 
 Choose 2 irreducable polynomials $f(x),g(x)$ that share a common integer root $m$ modulo $n$
 
 these polynomials link regular modular arithmetic with algebraic number fields
 
-#### 2: Seiving
+### 2: Seiving
 
 Search for pairs of coprime integers $(a,b)$ across a large grid (using line or lattice seiving)
 
@@ -20,7 +20,7 @@ Search for pairs of coprime integers $(a,b)$ across a large grid (using line or 
 
 - Lattice seiving is an algorithmic technique used to solve the shortest vector problem in high-dimensional lattices there are many different variations of this, like Gauss Seive, NV Seive, or k-tuple seiving. we will probably have to decide which to use when we get here
 
-### Lattice Seiving Steps
+#### Lattice Seiving Steps
 
 1: Initialization and sampling
 
@@ -44,7 +44,7 @@ Search for pairs of coprime integers $(a,b)$ across a large grid (using line or 
 
 - After repeating the seiving steps enough times until no further significant reductions happen, the algoritm takes pairwise differences or extracts the remaining vecotrs to output the shortest non-zero lattice vector (approximating the first successive minimum $\lambda_1$)
 
-#### 3: Filtering
+### 3: Filtering
 
 Remove redundant or duplicate relations and clean the sparse matrix of prime factors (there will be linear algebra in here, sorry)
 
@@ -62,7 +62,7 @@ Build a massive, sparse matrix from the collected relations and solve it over $m
 
 - What is a nullspace?: the nullspace (also called kernal) of a matrix A is the set of all input vectors x that result in the zero vector when multiplied by A. you see this primarily denoted as Ax=0
 
-### Block Lanczos steps
+#### Block Lanczos steps
 
 1: Intitialization
 
