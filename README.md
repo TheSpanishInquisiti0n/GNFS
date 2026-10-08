@@ -5,7 +5,7 @@ Kate and Sam Shoemaker
 will probably need a library similar to BigInteger in java like gmpy2
 
 ## All the research/info
-From google: this algorithm builds on the concept of finding a congruence of squares $(x^2\equiv y^2\pmod{n})$ which reveals factors of n via $\gcd(x-y,n)$, as long as $x\not\equiv\pm y\pmod{n}$ (otherwise the gcd is just $1$ or $n$, which tells you nothing)
+From google: this algorithm builds on the concept of finding a congruence of squares $(x^2\equiv y^2\pmod{n})$ which reveals factors of n via $\gcd(x-y,n)$, as long as $x\not\equiv\pm y\pmod{n}$, otherwise the gcd is just $1$ or $n$, which tells you nothing
 
 - for those who didn't have to suffer through discrete math, congruence means that for numbers $A,B\in\mathbb{Z},A\pmod n=B\pmod n$
 
@@ -19,9 +19,9 @@ Choose 2 irreducible polynomials $f(x),g(x)$ that share a common integer root $m
 
 - in practice $g$ is just linear: $g(x)=x-m$, so $m$ is trivially its root
 
-- the simplest way to get $f$ is the **base-m method**:
+- the simplest way to get $f$ is the base-m method:
 
-    - pick a degree $d$ (3 is fine for small $n$, real-world runs use 5 or 6)
+    - pick a degree $d$ (3 is fine for small $n$, we will probably want to use 5 or 6)
 
     - pick $m$ around $n^{1/d}$
 
@@ -29,9 +29,7 @@ Choose 2 irreducible polynomials $f(x),g(x)$ that share a common integer root $m
 
     - use those digits as coefficients: $f(x)=c_dx^d+c_{d-1}x^{d-1}+\dots+c_1x+c_0$, so $f(m)=n\equiv0\pmod{n}$
 
-- $f$ has to be irreducible. if it factors as $f=h\cdot k$ then $n=h(m)\cdot k(m)$ and you've (usually) factored $n$ for free
-
-- worked example (from Briggs' thesis): $n=45113$, $m=31$, $f(x)=x^3+15x^2+29x+8$ (check: $31^3+15\cdot31^2+29\cdot31+8=45113$)
+- $f$ has to be irreducible. if it factors as $f=h\cdot k$ then $n=h(m)\cdot k(m)$ and you've (usually) factored $n$
 
 these polynomials link regular modular arithmetic with algebraic number fields
 
